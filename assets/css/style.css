@@ -95,36 +95,31 @@ h1, h2, h3, h4, h5, h6 {
     text-align: right;
 }
 
-/* Ensure centered containers and hero sections remain 100% centered in RTL mode */
-[dir="rtl"] .text-center,
-[dir="rtl"] .text-center *,
-[dir="rtl"] .text-center h1,
-[dir="rtl"] .text-center h2,
-[dir="rtl"] .text-center h3,
-[dir="rtl"] .text-center h4,
-[dir="rtl"] .text-center h5,
-[dir="rtl"] .text-center h6,
-[dir="rtl"] .text-center p,
-[dir="rtl"] .text-center span,
-[dir="rtl"] .text-center a {
-    text-align: center !important;
-}
-
+/* Responsive RTL Text Alignment:
+   Elements left-aligned on desktop (text-left, md:text-left, lg:text-left)
+   MUST become RIGHT-ALIGNED (text-align: right !important) in RTL mode on Web View!
+*/
 [dir="rtl"] .text-left,
+[dir="rtl"] .sm\:text-left,
 [dir="rtl"] .md\:text-left,
-[dir="rtl"] .lg\:text-left {
+[dir="rtl"] .lg\:text-left,
+[dir="rtl"] .xl\:text-left {
     text-align: right !important;
 }
 
 [dir="rtl"] .items-start,
+[dir="rtl"] .sm\:items-start,
 [dir="rtl"] .md\:items-start,
-[dir="rtl"] .lg\:items-start {
+[dir="rtl"] .lg\:items-start,
+[dir="rtl"] .xl\:items-start {
     align-items: flex-start !important;
 }
 
 [dir="rtl"] .justify-start,
+[dir="rtl"] .sm\:justify-start,
 [dir="rtl"] .md\:justify-start,
-[dir="rtl"] .lg\:justify-start {
+[dir="rtl"] .lg\:justify-start,
+[dir="rtl"] .xl\:justify-start {
     justify-content: flex-start !important;
 }
 
