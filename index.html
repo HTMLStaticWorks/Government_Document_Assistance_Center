@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Government Document Assistance Center | Hassle-Free Document Processing</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="description" content="Master your assistances and become document-ready with our personalized coaching and document transformation system.">
+    <!-- Resource Hints for Fast Mobile Loading -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366',
+                        secondary: '#F8FAFC',
+                        accent: '#D97706',
+                        warning: '#F59E0B',
+                        error: '#DC2626'
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style id="premium-hero-animation-styles">
+        #upward-trend {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 3.5s ease-out;
+        }
+
+        @keyframes beamMove {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        .animate-beam {
+            animation: beamMove 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        .document-card {
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .document-bar {
+            opacity: 0;
+            height: 0 !important;
+            transition: height 1.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s ease;
+        }
+
+        .document-bar.active {
+            opacity: 1;
+            /* Height is managed by original classes after being triggered */
+        }
+        
+        #document-landscape.active .document-bar:nth-child(1) { height: 30% !important; }
+        #document-landscape.active .document-bar:nth-child(2) { height: 55% !important; }
+        #document-landscape.active .document-bar:nth-child(3) { height: 80% !important; }
+        #document-landscape.active .document-bar:nth-child(4) { height: 100% !important; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 transition-colors duration-300 has-fixed-header">
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-slate-900 shadow-sm site-header transition-colors duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="index.html" class="flex items-center space-x-2.5 group">
+                    <i class="fas fa-file-signature text-2xl text-primary dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-xl font-heading font-bold text-primary dark:text-blue-400">DocAssist</span>
+                </a>
+            </div>
+
+            <!-- Main Nav -->
+            <div class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <div class="relative group">
+                    <button class="flex items-center space-x-1 text-primary border-b-2 border-primary pb-1">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="index.html" class="block px-4 py-2 text-sm text-primary dark:text-primary hover:bg-slate-100 dark:hover:bg-slate-700">Home 1</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+                <a href="document-requirements.html" class="hover:text-primary transition-colors">Requirements</a>
+                <a href="track-status.html" class="hover:text-primary transition-colors">Track Status</a>
+                <a href="pricing.html" class="hover:text-primary transition-colors">Pricing</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="!hidden xl:!inline-flex p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 focus:outline-none">
+                    <i class="fas fa-moon w-6 h-6 flex items-center justify-center"></i>
+                </button>
+                <button id="rtl-toggle" class="!hidden xl:!inline-flex p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 focus:outline-none">
+                    <i class="fas fa-right-left w-6 h-6 flex items-center justify-center"></i>
+                </button>
+                <a href="bookappointment.html" class="!hidden xl:!inline-flex cta-button border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900 !h-10 text-sm">Book Appointment</a>
+                <a href="login.html" class="!hidden xl:!inline-flex cta-button bg-primary text-white hover:bg-blue-800 dark:bg-blue-400 dark:text-slate-900 dark:hover:bg-blue-300 !h-10 text-sm">Login</a>
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-btn" class="xl:hidden w-11 h-11 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg cursor-pointer transition-colors focus:outline-none" aria-label="Open Mobile Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Backdrop -->
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[45] hidden opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="xl:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-slate-900 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+            <div class="px-6 py-6 h-full flex flex-col">
+                <!-- Drawer Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-xl font-heading font-medium text-slate-900 dark:text-white">Menu</span>
+                    <button type="button" id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-white rounded-lg focus:outline-none cursor-pointer transition-colors" aria-label="Close Menu">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="space-y-4 flex-grow">
+                    <details class="group py-2">
+                        <summary class="flex items-center justify-between w-full text-primary font-medium text-lg hover:text-primary transition-colors cursor-pointer list-none" style="list-style: none;">
+                            <span>Home</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="pl-4 mt-2 space-y-2">
+                            <a href="index.html" class="block py-2 text-primary font-medium transition-colors">Home 1</a>
+                            <a href="home-2.html" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Home 2</a>
+                        </div>
+                    </details>
+                    <a href="about.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">About</a>
+                    <a href="services.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Services</a>
+                    <a href="document-requirements.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Requirements</a>
+                    <a href="track-status.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Track Status</a>
+                    <a href="pricing.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Pricing</a>
+                    <a href="contact.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Contact</a>
+                    
+                    <!-- Mobile Actions (Continuous) -->
+                    <div class="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center space-x-6 mb-8">
+
+                            <button id="dark-mode-toggle" class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400">
+                                <i class="fas fa-moon text-xl"></i>
+                            </button>
+                            <button id="rtl-toggle" class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400">
+                                <i class="fas fa-right-left text-xl"></i>
+                            </button>
+                        </div>
+                        <a href="bookappointment.html" class="cta-button border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900 text-center py-3 rounded-lg font-medium block mb-4">Book Appointment</a>
+                        <a href="login.html" class="cta-button bg-primary text-white hover:bg-blue-800 dark:bg-blue-400 dark:text-slate-900 dark:hover:bg-blue-300 text-center py-3 rounded-lg font-medium block">Login</a>
+                    </div>
+                </div>
+                
+                <!-- Bottom Spacer for drawer height -->
+                <div class="mt-auto pb-4"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO (min-h-screen, NO GAP) -->
+    <section class="min-h-screen flex items-center bg-slate-50 dark:bg-slate-950 transition-colors duration-300 relative overflow-hidden hero-section pt-16 lg:pt-0">
+        <!-- Custom Styles for Hero -->
+        <style>
+            @keyframes shimmer {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100%); }
+            }
+            .animate-shimmer { animation: shimmer 2.5s infinite; }
+            .perspective-1000 { perspective: 1000px; }
+            @keyframes floatSlow {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-20px); }
+                100% { transform: translateY(0px); }
+            }
+            .animate-float-slow { animation: floatSlow 6s ease-in-out infinite; }
+        </style>
+
+        <!-- Abstract Animated Background -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-to-br from-blue-400/30 to-purple-500/30 blur-[100px] animate-[pulse_8s_ease-in-out_infinite]"></div>
+            <div class="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-gradient-to-tl from-cyan-400/20 to-blue-600/20 blur-[120px] animate-[pulse_10s_ease-in-out_infinite_reverse]"></div>
+            <!-- Grid pattern -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMCwgMCwgMCwgMC4wNSkiLz48L3N2Zz4=')] dark:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wNSkiLz48L3N2Zz4=')] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 gap-8 lg:gap-12 items-center py-8 lg:py-0">
+            <!-- Text Content -->
+            <div class="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left relative z-20">
+                <div class="inline-flex items-center space-x-2 py-1.5 px-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-white/40 dark:border-slate-700/50 rounded-full mb-6 shadow-sm mx-auto lg:mx-0">
+                    <span class="relative flex h-2.5 w-2.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    </span>
+                    <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-800 dark:text-slate-200">Processing 50K+ Applications</span>
+                </div>
+                
+                <h1 class="text-4xl lg:text-6xl font-heading font-black leading-[1.1] text-slate-900 dark:text-white mb-4">
+                    Master Your <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300 relative inline-block pb-1">
+                        Official Documents
+                        <!-- Underline swoosh -->
+                        <svg class="absolute w-full h-3 bottom-0 left-0 text-cyan-400/50" viewBox="0 0 100 10" preserveAspectRatio="none">
+                            <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                </h1>
+                
+                <p class="text-base lg:text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg leading-relaxed mx-auto lg:mx-0">
+                    Experience the future of document processing. Fast, reliable, and completely transparent assistance for Passports, Aadhaar, PAN, and more.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-5 w-full sm:w-auto">
+                    <a href="bookappointment.html" class="group relative inline-flex items-center justify-center px-6 py-3.5 text-sm lg:text-base font-bold text-white transition-all duration-200 bg-primary border border-transparent rounded-2xl hover:bg-blue-800 hover:shadow-xl hover:shadow-blue-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary overflow-hidden">
+                        <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                        <span class="relative">Book Appointment</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="services.html" class="inline-flex items-center justify-center px-6 py-3.5 text-sm lg:text-base font-bold text-slate-700 dark:text-white transition-all duration-200 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-200 backdrop-blur-md">
+                        Explore Services
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-6 border-t border-slate-200 dark:border-slate-800 w-full text-left">
+                    <div class="flex -space-x-3">
+                        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="User 1">
+                        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="User 2">
+                        <img class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="User 3">
+                        <div class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-600 dark:text-slate-300 z-10">+2k</div>
+                    </div>
+                    <div>
+                        <div class="flex text-amber-400 text-xs mb-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xs font-medium text-slate-600 dark:text-slate-400">4.9/5 Average Rating</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visual Content -->
+            <div class="lg:col-span-6 relative lg:h-[550px] flex items-center justify-center w-full mt-10 lg:mt-0 perspective-1000">
+                <!-- Main Glass Card -->
+                <div class="group relative w-full max-w-[420px] aspect-[4/5] bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl rounded-[2rem] border border-white/50 dark:border-slate-700/50 shadow-2xl p-5 lg:p-6 animate-float-slow transition-shadow duration-700 hover:shadow-[0_30px_60px_rgba(0,51,102,0.15)] z-20 flex flex-col justify-between">
+                    
+                    <!-- Decorative Top Bar -->
+                    <div class="flex justify-between items-center mb-6 pb-3 border-b border-slate-200/50 dark:border-slate-700/50">
+                        <div class="flex space-x-2">
+                            <div class="w-2.5 h-2.5 rounded-full bg-rose-400"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                        </div>
+                        <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-slate-800/50 px-2.5 py-1 rounded-full">Live Dashboard</span>
+                    </div>
+
+                    <!-- Animated Document Cards -->
+                    <div class="space-y-3 relative flex-1 flex flex-col justify-center">
+                        <!-- Card 1: Processing -->
+                        <div class="bg-white/80 dark:bg-slate-800/80 p-4 rounded-xl shadow-sm border border-white/60 dark:border-slate-600/30 flex items-center justify-between transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-lg relative overflow-hidden hover:scale-[1.02]">
+                            <!-- Scanning animation effect -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 dark:via-white/5 to-transparent w-full h-full animate-shimmer"></div>
+                            
+                            <div class="flex items-center space-x-3 relative z-10">
+                                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg shadow-inner">
+                                    <i class="fas fa-passport"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 dark:text-white text-xs">Passport Renewal</h4>
+                                    <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">ID: #4829A</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end relative z-10">
+                                <span class="px-2 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-[9px] font-bold uppercase rounded mb-1.5">Processing</span>
+                                <div class="w-12 h-1 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div class="w-[60%] h-full bg-amber-500 rounded-full animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Completed -->
+                        <div class="bg-white/80 dark:bg-slate-800/80 p-4 rounded-xl shadow-sm border border-white/60 dark:border-slate-600/30 flex items-center justify-between transform transition-all duration-500 delay-100 group-hover:-translate-y-1 group-hover:shadow-lg hover:scale-[1.02]">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-lg shadow-inner">
+                                    <i class="fas fa-id-card"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 dark:text-white text-xs">Aadhaar Update</h4>
+                                    <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">ID: #9921B</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[9px] font-bold uppercase rounded mb-1.5">Verified</span>
+                                <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: New Application -->
+                        <div class="bg-white/80 dark:bg-slate-800/80 p-4 rounded-xl shadow-sm border border-white/60 dark:border-slate-600/30 flex items-center justify-between transform transition-all duration-500 delay-200 group-hover:-translate-y-1 group-hover:shadow-lg hover:scale-[1.02]">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/50 rounded-lg flex items-center justify-center text-purple-600 dark:text-purple-400 text-lg shadow-inner">
+                                    <i class="fas fa-car-side"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 dark:text-white text-xs">Driving License</h4>
+                                    <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Submission Pending</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <button class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 hover:text-primary hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors flex items-center justify-center">
+                                    <i class="fas fa-upload text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="absolute -right-6 top-1/4 bg-white dark:bg-slate-800 p-3 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-300 z-30">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400">
+                                <i class="fas fa-shield-halved text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-[8px] uppercase font-bold text-slate-500 mb-0.5">Security</p>
+                                <p class="text-xs font-bold text-slate-900 dark:text-white">256-bit Secure</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stat -->
+                    <div class="absolute -left-6 bottom-1/4 bg-white dark:bg-slate-800 p-3 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 transform -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-500 flex flex-col items-center justify-center z-30">
+                        <span class="text-xl font-black text-primary dark:text-blue-400 tabular-nums">24h</span>
+                        <span class="text-[8px] font-bold text-slate-500 uppercase mt-0.5">Avg Process Time</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: OUR SERVICES -->
+    <section id="services" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-primary dark:text-blue-400 font-semibold uppercase tracking-widest text-xs mb-3 block">What We Do</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-4">Document Assistance Services</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">Comprehensive support for all your essential government document processing needs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1: Passport -->
+                <div class="group bg-slate-50 dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-200 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl relative">
+                        <img src="assets/images/passport.jpg" alt="Passport Processing" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                        <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 text-slate-900 dark:text-white">Passport Processing</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">Fresh applications, renewals, police clearance, and Tatkaal service guidance.</p>
+                    <a href="services.html" class="text-primary dark:text-blue-400 text-sm font-bold inline-flex items-center group-hover:underline mt-auto">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+                
+                <!-- Service 2: Aadhaar -->
+                <div class="group bg-slate-50 dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-200 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl relative">
+                        <img src="assets/images/aadhaar.jpg" alt="Aadhaar Services" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                        <div class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 text-slate-900 dark:text-white">Aadhaar Services</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">New enrollments, demographic updates, mobile linking, and biometric updates.</p>
+                    <a href="services.html" class="text-emerald-600 dark:text-emerald-400 text-sm font-bold inline-flex items-center group-hover:underline mt-auto">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+                
+                <!-- Service 3: PAN -->
+                <div class="group bg-slate-50 dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-200 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl relative">
+                        <img src="assets/images/pan.jpg" alt="PAN Card Support" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                        <div class="absolute inset-0 bg-amber-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 text-slate-900 dark:text-white">PAN Card Support</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">New PAN applications, corrections, reprint requests, and Aadhaar-PAN linking.</p>
+                    <a href="services.html" class="text-amber-600 dark:text-amber-400 text-sm font-bold inline-flex items-center group-hover:underline mt-auto">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+                
+                <!-- Service 4: Driving License -->
+                <div class="group bg-slate-50 dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-200 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl relative">
+                        <img src="assets/images/driving.jpg" alt="Driving License" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                        <div class="absolute inset-0 bg-purple-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 text-slate-900 dark:text-white">Driving License</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">Learner's license, permanent DL, renewals, and international driving permits.</p>
+                    <a href="services.html" class="text-purple-600 dark:text-purple-400 text-sm font-bold inline-flex items-center group-hover:underline mt-auto">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: STEP-BY-STEP PROCESS -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-primary dark:text-blue-400 font-semibold uppercase tracking-widest text-xs mb-3 block">How It Works</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6">Four Simple Steps to Your Document.</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg mb-8 max-w-2xl mx-auto">We've refined the administrative process into a frictionless journey. Let our experts handle the bureaucracy.</p>
+            </div>
+            
+            <style>
+                @keyframes pulseLine {
+                    0% { transform: translateY(-100%); opacity: 0; }
+                    50% { opacity: 1; }
+                    100% { transform: translateY(400%); opacity: 0; }
+                }
+            </style>
+            <div class="space-y-8 relative max-w-4xl mx-auto">
+
+                <!-- Step 1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 group-[.is-active]:bg-primary group-[.is-active]:text-white group-[.is-active]:border-primary transition-colors z-10">1</div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm relative z-10 hover:-translate-y-1 transition-transform text-left">
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-1">Consultation</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Share your requirements. We verify eligibility and provide a tailored checklist.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">2</div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm relative z-10 hover:-translate-y-1 transition-transform text-left">
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-1">Document Prep</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Upload your copies securely. Our experts fill forms and prepare application packets.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">3</div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm relative z-10 hover:-translate-y-1 transition-transform text-left">
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-1">Submission</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">We book your government slot and process the application on your behalf.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">4</div>
+                    <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm relative z-10 hover:-translate-y-1 transition-transform text-left">
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-1">Delivery</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Track live status until the official document arrives at your doorstep.</p>
+                    </div>
+                </div>
+                
+                <!-- Animated central line -->
+                <div class="absolute inset-0 ml-[1.15rem] md:mx-auto h-full w-0.5 bg-slate-200 dark:bg-slate-700 overflow-hidden z-0 rounded-full">
+                     <div class="w-full h-1/4 bg-gradient-to-b from-transparent via-primary to-transparent animate-[pulseLine_3s_ease-in-out_infinite]"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: UNIQUE ANIMATION - SECURITY VAULT -->
+    <section class="py-24 bg-[#0a192f] relative overflow-hidden">
+        <!-- Abstract Background Glow -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-900/40 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Left: Content -->
+            <div class="text-white text-center lg:text-left">
+                <span class="text-emerald-400 font-semibold uppercase tracking-widest text-xs mb-3 block">Ironclad Security</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold mb-6">Bank-Grade Document Vault.</h2>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    We process your most sensitive government IDs. That's why we've built a military-grade security infrastructure to ensure your data is encrypted in transit and at rest.
+                </p>
+                
+                <div class="space-y-6 max-w-xl mx-auto lg:mx-0">
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left space-y-3 lg:space-y-0 lg:space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">256-Bit AES Encryption</h4>
+                            <p class="text-sm text-slate-400">All documents are encrypted the moment they leave your device.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left space-y-3 lg:space-y-0 lg:space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Direct Government APIs</h4>
+                            <p class="text-sm text-slate-400">We push data directly to government servers with zero middleman exposure.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left space-y-3 lg:space-y-0 lg:space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Auto-Purge System</h4>
+                            <p class="text-sm text-slate-400">Your documents are permanently wiped from our systems post-verification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right: Unique Orbital Animation -->
+            <div class="relative h-[400px] lg:h-[500px] flex items-center justify-center">
+                <!-- Center Core -->
+                <div class="relative z-20 w-24 h-24 bg-gradient-to-br from-blue-500 to-[#003366] rounded-full flex items-center justify-center text-white text-4xl shadow-[0_0_50px_rgba(0,102,204,0.6)] border-4 border-slate-800/50">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                
+                <!-- Inner Ring (Fast) -->
+                <div class="absolute inset-auto w-48 h-48 border border-blue-500/30 rounded-full animate-[spin_8s_linear_infinite]">
+                    <!-- Orbiting Node -->
+                    <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-emerald-400 rounded-full shadow-[0_0_15px_rgba(52,211,153,0.8)]"></div>
+                    <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-400 rounded-full shadow-[0_0_15px_rgba(96,165,250,0.8)]"></div>
+                </div>
+                
+                <!-- Middle Ring (Medium, Reverse) -->
+                <div class="absolute inset-auto w-72 h-72 border border-slate-500/30 border-dashed rounded-full animate-[spin_15s_linear_infinite_reverse]">
+                    <div class="absolute top-1/2 -right-3 -translate-y-1/2 w-8 h-8 bg-[#0a192f] border-2 border-purple-400 rounded-full shadow-[0_0_20px_rgba(167,139,250,0.6)] flex items-center justify-center text-[10px] text-purple-400">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="absolute top-1/2 -left-3 -translate-y-1/2 w-8 h-8 bg-[#0a192f] border-2 border-amber-400 rounded-full shadow-[0_0_20px_rgba(251,191,36,0.6)] flex items-center justify-center text-[10px] text-amber-400">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                </div>
+                
+                <!-- Outer Ring (Slow) -->
+                <div class="absolute inset-auto w-96 h-96 border border-emerald-500/20 rounded-full animate-[spin_25s_linear_infinite]">
+                    <div class="absolute bottom-14 left-10 w-10 h-10 bg-[#003366] border border-blue-400 rounded-full shadow-[0_0_25px_rgba(59,130,246,0.5)] flex items-center justify-center text-xs text-white transform -rotate-45">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <div class="absolute top-14 right-10 w-10 h-10 bg-slate-800 border border-slate-500 rounded-full shadow-[0_0_15px_rgba(148,163,184,0.3)] flex items-center justify-center text-xs text-white">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                </div>
+                
+                <!-- Data Connection Lines (Decorative) -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 500 500">
+                    <line x1="250" y1="250" x2="100" y2="100" stroke="white" stroke-width="1" stroke-dasharray="4 4" />
+                    <line x1="250" y1="250" x2="400" y2="400" stroke="white" stroke-width="1" stroke-dasharray="4 4" />
+                    <line x1="250" y1="250" x2="450" y2="150" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4 4" />
+                </svg>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: BENTO BOX ECOSYSTEM -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-widest text-xs mb-3 block">Powerful Ecosystem</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-4">Everything You Need.</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
+                
+                <!-- Tile 1: Document Scanner (Span 2) -->
+                <div class="md:col-span-2 bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group hover:shadow-xl transition-shadow">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent dark:from-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Smart Document Scanner</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm max-w-sm">Our AI instantly verifies your uploaded copies for government compliance before submission.</p>
+                        </div>
+                        
+                        <!-- Unique Scanner Animation -->
+                        <div class="absolute bottom-[-15%] right-[-5%] w-64 h-64 opacity-60 group-hover:opacity-100 transition-opacity duration-700">
+                            <div class="relative w-full h-full bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden transform rotate-[-10deg] shadow-2xl group-hover:rotate-0 transition-transform duration-700 ease-out">
+                                <!-- Document Content -->
+                                <div class="p-6 space-y-4">
+                                    <div class="w-16 h-16 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
+                                    <div class="h-4 bg-slate-300 dark:bg-slate-600 rounded w-3/4"></div>
+                                    <div class="h-4 bg-slate-300 dark:bg-slate-600 rounded w-1/2"></div>
+                                    <div class="h-4 bg-slate-300 dark:bg-slate-600 rounded w-full"></div>
+                                </div>
+                                <!-- Animated Scan Line -->
+                                <div class="absolute inset-0 border-b-2 border-emerald-400 bg-gradient-to-t from-emerald-400/20 to-transparent h-[40%] animate-[scan_2.5s_ease-in-out_infinite_alternate]"></div>
+                            </div>
+                        </div>
+                        <!-- Add keyframes for scan inline -->
+                        <style>
+                            @keyframes scan {
+                                0% { transform: translateY(-50%); }
+                                100% { transform: translateY(200%); }
+                            }
+                        </style>
+                    </div>
+                </div>
+
+                <!-- Tile 2: Live Support (Span 1) -->
+                <div class="bg-[#003366] rounded-3xl p-8 text-white relative overflow-hidden group shadow-lg">
+                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wNSkiLz48L3N2Zz4=')] opacity-20"></div>
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-headset text-blue-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">24/7 Support</h3>
+                            <p class="text-blue-200 text-sm">Real human agents ready to assist you via WhatsApp.</p>
+                        </div>
+                        <!-- Pulse Ring -->
+                        <div class="absolute top-8 right-8 w-4 h-4 bg-emerald-400 rounded-full shadow-[0_0_10px_#34d399]">
+                            <div class="absolute inset-0 bg-emerald-400 rounded-full animate-ping opacity-75"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tile 3: Processing Speed (Span 1) -->
+                <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group hover:shadow-xl transition-shadow">
+                    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center">
+                        <!-- Speedometer Animation -->
+                        <div class="relative w-32 h-16 overflow-hidden mb-6">
+                            <!-- Background track -->
+                            <div class="absolute top-0 left-0 w-32 h-32 border-[12px] border-slate-100 dark:border-slate-800 rounded-full"></div>
+                            <!-- Active track (rotates in) -->
+                            <div class="absolute top-0 left-0 w-32 h-32 border-[12px] border-amber-500 rounded-full border-b-transparent border-r-transparent transform -rotate-[135deg] group-hover:rotate-[45deg] transition-transform duration-1000 ease-out shadow-[0_0_15px_rgba(245,158,11,0.5)]"></div>
+                            <!-- Center pivot -->
+                            <div class="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-4 h-4 bg-slate-900 dark:bg-white rounded-full z-10"></div>
+                            <!-- Needle -->
+                            <div class="absolute bottom-0 left-1/2 w-1 h-14 bg-slate-900 dark:bg-white origin-bottom transform -rotate-[90deg] group-hover:rotate-[90deg] transition-transform duration-1000 ease-out z-0"></div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">3x Faster</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Tatkaal & Express Routes</p>
+                    </div>
+                </div>
+
+                <!-- Tile 4: Success Rate (Span 2) -->
+                <div class="md:col-span-2 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl p-8 text-white relative overflow-hidden group shadow-lg">
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10 h-full flex items-center justify-between">
+                        <div class="max-w-sm">
+                            <h3 class="text-3xl font-bold mb-2">99.8% Success Rate</h3>
+                            <p class="text-emerald-50 text-sm leading-relaxed">Our rigorous pre-check ensures your application is never rejected due to errors, formatting, or missing documents.</p>
+                        </div>
+                        
+                        <!-- Animated Bar Graph -->
+                        <div class="hidden sm:flex items-end space-x-2.5 h-32 border-b-2 border-emerald-400/50 pb-1">
+                            <div class="w-8 bg-emerald-300/40 rounded-t border-t border-emerald-200/50 h-[30%] group-hover:h-[50%] transition-all duration-700 ease-out"></div>
+                            <div class="w-8 bg-emerald-300/60 rounded-t border-t border-emerald-200/50 h-[45%] group-hover:h-[65%] transition-all duration-700 ease-out delay-75"></div>
+                            <div class="w-8 bg-emerald-300/80 rounded-t border-t border-emerald-200/50 h-[60%] group-hover:h-[80%] transition-all duration-700 ease-out delay-150"></div>
+                            <div class="w-8 bg-white/90 rounded-t shadow-[0_0_20px_rgba(255,255,255,0.4)] h-[85%] group-hover:h-[100%] transition-all duration-700 ease-out delay-200 relative">
+                                <div class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity delay-700">99.8%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FEE STRUCTURE -->
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-emerald-500 dark:text-emerald-400 font-semibold uppercase tracking-widest text-xs mb-3 block">Transparent Pricing</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-4">Simple Fee Structure</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">No hidden costs. You only pay the government fee plus our nominal service charge.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Fee Card 1 -->
+                <div class="bg-slate-50 dark:bg-slate-800/30 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 text-center flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Passport Service</h3>
+                    <p class="text-slate-500 text-sm mb-6">Standard Renewal / Fresh</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900 dark:text-white">₹499</span>
+                        <span class="text-sm text-slate-500">+ Govt Fee</span>
+                    </div>
+                    <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-3 mb-8 text-left flex-1">
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> Application Drafting</li>
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> Document Verification</li>
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> Appointment Booking</li>
+                    </ul>
+                </div>
+                
+                <!-- Fee Card 2 -->
+                <div class="bg-slate-50 dark:bg-slate-800/30 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 text-center flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Aadhaar Service</h3>
+                    <p class="text-slate-500 text-sm mb-6">Updates & Corrections</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900 dark:text-white">₹299</span>
+                        <span class="text-sm text-slate-500">+ Govt Fee</span>
+                    </div>
+                    <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-3 mb-8 text-left flex-1">
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> Demographic Updates</li>
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> Mobile/Email Link</li>
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> Smart Card Print Request</li>
+                    </ul>
+                </div>
+                
+                <!-- Fee Card 3 -->
+                <div class="relative bg-primary dark:bg-blue-900 p-8 rounded-3xl border border-blue-600 text-center flex flex-col h-full transform scale-105 shadow-2xl z-10 overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-400 text-slate-900 text-[10px] font-bold px-3 py-1 uppercase rounded-bl-lg">Most Popular</div>
+                    <h3 class="text-lg font-bold text-white mb-2">PAN Card</h3>
+                    <p class="text-blue-200 text-sm mb-6">New / Correction</p>
+                    <div class="mb-6 text-white">
+                        <span class="text-4xl font-black">₹399</span>
+                        <span class="text-sm text-blue-200">+ Govt Fee</span>
+                    </div>
+                    <ul class="text-sm text-blue-100 space-y-3 mb-8 text-left flex-1">
+                        <li class="flex items-start"><i class="fas fa-check text-amber-400 mt-1 mr-2"></i> Instant e-PAN Option</li>
+                        <li class="flex items-start"><i class="fas fa-check text-amber-400 mt-1 mr-2"></i> Error Correction</li>
+                        <li class="flex items-start"><i class="fas fa-check text-amber-400 mt-1 mr-2"></i> Aadhaar Linking</li>
+                    </ul>
+                </div>
+                
+                <!-- Fee Card 4 -->
+                <div class="bg-slate-50 dark:bg-slate-800/30 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 text-center flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Driving License</h3>
+                    <p class="text-slate-500 text-sm mb-6">Learner's & Permanent</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900 dark:text-white">₹599</span>
+                        <span class="text-sm text-slate-500">+ Govt Fee</span>
+                    </div>
+                    <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-3 mb-8 text-left flex-1">
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> LL Test Prep Material</li>
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> Slot Booking RTO</li>
+                        <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i> Renewal/Address Change</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BOOK APPOINTMENT FORM -->
+    <section class="py-12 sm:py-20 md:py-24 bg-slate-50 dark:bg-slate-950 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-slate-700 overflow-hidden flex flex-col md:flex-row">
+                <!-- Image Side -->
+                <div class="md:w-[40%] bg-blue-50 relative hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Customer Service" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white mb-2">Need Immediate Help?</h3>
+                        <p class="text-blue-100 text-sm mb-6">Skip the line and get your documents processed instantly with our premium desk.</p>
+                        <div class="flex items-center text-white space-x-3">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-blue-200 tracking-widest">Call Support (24/7)</p>
+                                <p class="font-bold">+91 1800 123 4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form Side -->
+                <div class="md:w-[60%] p-6 sm:p-8 lg:p-12">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 bg-primary/10 dark:bg-blue-400/10 text-primary dark:text-blue-400 rounded-full text-xs font-semibold mb-3">
+                        <i class="fas fa-calendar-check text-xs"></i>
+                        <span>Instant Priority Booking</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 dark:text-white mb-2">Book an Appointment</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mb-6 sm:mb-8">Fill out the form below to schedule a callback from our document experts.</p>
+                    
+                    <form action="#" method="POST" class="space-y-4 sm:space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                            <div>
+                                <label for="firstName" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-1.5">First Name</label>
+                                <input type="text" id="firstName" name="firstName" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-500 focus:border-transparent transition-all" placeholder="John">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-1.5">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                            <div>
+                                <label for="phone" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-1.5">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-500 focus:border-transparent transition-all" placeholder="+91 98765 43210">
+                            </div>
+                            <div>
+                                <label for="serviceType" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-1.5">Service Required</label>
+                                <div class="relative">
+                                    <select id="serviceType" name="serviceType" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-500 focus:border-transparent transition-all appearance-none pr-10">
+                                        <option value="" disabled selected>Select Service...</option>
+                                        <option value="passport">Passport Processing</option>
+                                        <option value="aadhaar">Aadhaar Services</option>
+                                        <option value="pan">PAN Card Support</option>
+                                        <option value="dl">Driving License</option>
+                                        <option value="other">Other Inquiry</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-slate-400">
+                                        <i class="fas fa-chevron-down text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-1.5">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="3" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-500 focus:border-transparent transition-all resize-none" placeholder="Briefly describe your requirements..."></textarea>
+                        </div>
+                        
+                        <button type="button" class="w-full bg-primary hover:bg-blue-800 text-white font-bold rounded-xl px-6 py-3.5 sm:py-4 transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center justify-center text-sm sm:text-base mt-2">
+                            <span>Confirm Appointment Booking</span>
+                            <i class="fas fa-paper-plane ml-2.5 text-xs sm:text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Standard) -->
+    <footer class="bg-white dark:bg-slate-900 py-12 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-12 gap-x-8 mb-12 text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start col-span-1 md:col-span-2 lg:col-span-2">
+                    <a href="index.html" class="flex items-center space-x-2.5 mb-6 group">
+                        <i class="fas fa-file-signature text-2xl text-primary dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xl font-heading font-bold text-primary dark:text-blue-400">DocAssist</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-xs mb-6 text-sm">Empowering families to reclaim their time through efficient, stress-free government document processing.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" aria-label="X (Twitter)"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Quick Menu</h6>
+                    <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">All Services</a></li>
+                        <li><a href="document-requirements.html" class="hover:text-primary transition-colors">Requirements</a></li>
+                        <li><a href="track-status.html" class="hover:text-primary transition-colors">Track Status</a></li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Solutions & Support</h6>
+                    <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Service Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                        <li><a href="bookappointment.html" class="hover:text-primary transition-colors">Book Appointment</a></li>
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Client Portal Login</a></li>
+                        <li><a href="coming-soon.html" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start col-span-1 md:col-span-2 lg:col-span-1">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-4 uppercase tracking-widest text-xs">Newsletter</h6>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Subscribe for real-time policy updates, fee changes & processing guides.</p>
+                    <form class="w-full space-y-2.5" onsubmit="event.preventDefault(); alert('Thank you for subscribing to DocAssist updates!');">
+                        <div class="relative w-full">
+                            <input type="email" placeholder="Your email address..." required class="w-full h-10 pl-3.5 pr-10 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-400 transition-all">
+                            <button type="submit" class="absolute right-1 top-1 bottom-1 px-3 bg-primary dark:bg-blue-400 text-white dark:text-slate-900 rounded-lg text-xs font-medium hover:opacity-90 transition-opacity" title="Subscribe">
+                                <i class="fas fa-paper-plane text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-[11px] text-slate-400 dark:text-slate-500 flex items-center justify-center md:justify-start">
+                            <i class="fas fa-shield-halved text-emerald-500 mr-1"></i>No spam. Unsubscribe anytime.
+                        </p>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-slate-100 dark:border-slate-800 flex flex-col items-center text-sm text-slate-400">
+                <p>&copy; 2026 DocAssist Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script id="premium-hero-visual-logic">
+        document.addEventListener('DOMContentLoaded', () => {
+            const documentCount = document.getElementById('document-count');
+            const documentLandscape = document.getElementById('document-landscape');
+            const transBeam = document.getElementById('trans-beam');
+            const trendLine = document.getElementById('upward-trend');
+            const bars = document.querySelectorAll('.document-bar');
+            
+            const phaseDocument = document.getElementById('phase-document');
+            const phaseMiddle = document.getElementById('phase-middle');
+
+            function animateNumber(element, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const current = Math.floor(progress * (end - start) + start);
+                    element.innerHTML = current.toLocaleString('en-IN');
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            function startTransformation() {
+                // PHASE 1: Collapse Document
+                setTimeout(() => {
+                    animateNumber(documentCount, 120000, 0, 3000);
+                    transBeam.classList.add('animate-beam');
+                    documentLandscape.style.transform = 'scale(0.8) translateY(20px)';
+                    documentLandscape.style.opacity = '0';
+                    documentLandscape.style.filter = 'blur(10px)';
+                }, 500);
+
+                // PHASE 2: Emergence
+                setTimeout(() => {
+                    documentLandscape.classList.add('active');
+                    documentLandscape.style.opacity = '1';
+                    documentLandscape.style.transform = 'translateY(0)';
+                    
+                    phaseDocument.classList.add('opacity-30', 'border-transparent');
+                    phaseMiddle.classList.remove('opacity-30');
+                    phaseMiddle.classList.add('text-cyan-500', 'font-medium', 'border-b-2', 'border-cyan-500/30', 'pb-2');
+                }, 2000);
+
+                // PHASE 3: Compound Growth
+                setTimeout(() => {
+                    animateNumber(documentCount, 0, 250000, 3000);
+                    trendLine.style.strokeDashoffset = '0';
+                    
+                    bars.forEach(bar => {
+                        bar.classList.add('active');
+                        bar.querySelector('i').classList.add('group-active'); // Manual trigger for checkmarks
+                    });
+                    
+                    // Activate checkmark/rocket logic
+                    bars.forEach(bar => bar.classList.add('group'));
+                    setTimeout(() => {
+                        bars.forEach(bar => bar.classList.add('active'));
+                    }, 100);
+
+                    phaseMiddle.classList.add('opacity-30', 'border-transparent');
+                    phaseDocument.classList.remove('opacity-30');
+                    phaseDocument.classList.add('text-emerald-500', 'font-medium', 'border-b-2', 'border-emerald-500/30', 'pb-2');
+                }, 3500);
+            }
+
+            // Trigger after initial load
+            setTimeout(startTransformation, 1200);
+
+            // Re-trigger on scroll reveal (if desired)
+            // Or simple hover effect
+            const visual = document.getElementById('transformation-visual');
+            visual.addEventListener('mouseenter', () => {
+                trendLine.style.filter = 'drop-shadow(0 0 12px rgba(16,185,129,0.4))';
+            });
+            visual.addEventListener('mouseleave', () => {
+                trendLine.style.filter = 'none';
+            });
+        });
+    </script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html>

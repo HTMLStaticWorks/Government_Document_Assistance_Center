@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Our Services | DocAssist - Comprehensive Document Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366',
+                        secondary: '#F8FAFC',
+                        accent: '#D97706',
+                        warning: '#F59E0B',
+                        error: '#DC2626'
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="bg-white text-slate-900 transition-colors duration-300 has-fixed-header">
+
+    <header class="bg-white dark:bg-slate-900 shadow-sm site-header transition-colors duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="index.html" class="flex items-center space-x-2.5 group">
+                    <i class="fas fa-file-signature text-2xl text-primary dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-xl font-heading font-bold text-primary dark:text-blue-400">DocAssist</span>
+                </a>
+            </div>
+
+            <!-- Main Nav -->
+            <div class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <div class="relative group">
+                    <button class="flex items-center space-x-1 hover:text-primary transition-colors pb-1">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="index.html" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary">Home 1</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="services.html" class="text-primary border-b-2 border-primary pb-1">Services</a>
+                <a href="document-requirements.html" class="hover:text-primary transition-colors">Requirements</a>
+                <a href="track-status.html" class="hover:text-primary transition-colors">Track Status</a>
+                <a href="pricing.html" class="hover:text-primary transition-colors">Pricing</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="!hidden xl:!inline-flex p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 focus:outline-none">
+                    <i class="fas fa-moon w-6 h-6 flex items-center justify-center"></i>
+                </button>
+                <button id="rtl-toggle" class="!hidden xl:!inline-flex p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 focus:outline-none">
+                    <i class="fas fa-right-left w-6 h-6 flex items-center justify-center"></i>
+                </button>
+                <a href="bookappointment.html" class="!hidden xl:!inline-flex cta-button border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900 !h-10 text-sm">Book Appointment</a>
+                <a href="login.html" class="!hidden xl:!inline-flex cta-button bg-primary text-white hover:bg-blue-800 dark:bg-blue-400 dark:text-slate-900 dark:hover:bg-blue-300 !h-10 text-sm">Login</a>
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-btn" class="xl:hidden w-11 h-11 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg cursor-pointer transition-colors focus:outline-none" aria-label="Open Mobile Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Backdrop -->
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[45] hidden opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="xl:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-slate-900 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+            <div class="px-6 py-6 h-full flex flex-col">
+                <!-- Drawer Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-xl font-heading font-medium text-slate-900 dark:text-white">Menu</span>
+                    <button type="button" id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-white rounded-lg focus:outline-none cursor-pointer transition-colors" aria-label="Close Menu">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="space-y-4 flex-grow">
+                    <details class="group py-2">
+                        <summary class="flex items-center justify-between w-full text-primary font-medium text-lg hover:text-primary transition-colors cursor-pointer list-none" style="list-style: none;">
+                            <span>Home</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="pl-4 mt-2 space-y-2">
+                            <a href="index.html" class="block py-2 text-primary font-medium transition-colors">Home 1</a>
+                            <a href="home-2.html" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Home 2</a>
+                        </div>
+                    </details>
+                    <a href="about.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">About</a>
+                    <a href="services.html" class="block py-2 text-primary font-medium text-lg">Services</a>
+                    <a href="document-requirements.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Requirements</a>
+                    <a href="track-status.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Track Status</a>
+                    <a href="pricing.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Pricing</a>
+                    <a href="contact.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Contact</a>
+                    
+                    <!-- Mobile Actions (Continuous) -->
+                    <div class="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center space-x-6 mb-8">
+
+                            <button id="dark-mode-toggle" class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400">
+                                <i class="fas fa-moon text-xl"></i>
+                            </button>
+                            <button id="rtl-toggle" class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400">
+                                <i class="fas fa-right-left text-xl"></i>
+                            </button>
+                        </div>
+                        <a href="bookappointment.html" class="cta-button border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900 text-center py-3 rounded-lg font-medium block mb-4">Book Appointment</a>
+                        <a href="login.html" class="cta-button bg-primary text-white hover:bg-blue-800 dark:bg-blue-400 dark:text-slate-900 dark:hover:bg-blue-300 text-center py-3 rounded-lg font-medium block">Login</a>
+                    </div>
+                </div>
+                
+                <!-- Bottom Spacer for drawer height -->
+                <div class="mt-auto pb-4"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: SERVICES HERO -->
+    <section class="py-24 bg-primary text-white relative hero-section flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <div class="absolute w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-3xl mx-auto px-4">
+            <nav class="flex justify-center mb-6 space-x-2 text-blue-200 text-sm font-medium uppercase tracking-widest">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-white">Services</span>
+            </nav>
+            <h1 class="text-4xl md:text-6xl font-heading font-medium mb-6">Expert Document Systems</h1>
+            <p class="text-blue-100 text-lg leading-relaxed">We provide the tools, the coaching, and the expert assistance to transform your document processing experience.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SERVICE GRID -->
+    <section class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-secondary dark:bg-slate-800 p-8 rounded-3xl border border-transparent hover:border-primary/20 transition-all card-float flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <div class="card-image-container group relative">
+                        <img src="assets/images/IG13.png" alt="Document Mastery" loading="lazy">
+                        <div class="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <h3 class="text-2xl font-medium dark:text-white mb-4">Document Mastery</h3>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">Our flagship system. We map your requirements, choose the best strategy, and assist you through execution.</p>
+                    <ul class="space-y-3 mb-10 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-500"></i><span>Document Preparation Plans</span></li>
+                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-500"></i><span>Application Tracking Help</span></li>
+                    </ul>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-secondary dark:bg-slate-800 p-8 rounded-3xl border border-transparent hover:border-primary/20 transition-all card-float flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <div class="card-image-container group relative">
+                        <img src="assets/images/IG14.png" alt="Continuous Support" loading="lazy">
+                        <div class="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <h3 class="text-2xl font-medium dark:text-white mb-4">Continuous Support</h3>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">For those who have completed their primary applications and need ongoing updates or renewals.</p>
+                     <ul class="space-y-3 mb-10 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-500"></i><span>Renewal Reminders</span></li>
+                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-500"></i><span>Priority Error Correction</span></li>
+                    </ul>
+                </div>
+                <!-- Service 3 (Centered on 2nd row on tablet) -->
+                <div class="bg-secondary dark:bg-slate-800 p-8 rounded-3xl border border-transparent hover:border-primary/20 transition-all card-float flex flex-col items-center lg:items-start text-center lg:text-left md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto lg:col-span-1 lg:w-full lg:mx-0">
+                    <div class="card-image-container group relative">
+                        <img src="assets/images/IG15.png" alt="Corporate Wellness" loading="lazy">
+                        <div class="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <h3 class="text-2xl font-medium dark:text-white mb-4">Family & Group Processing</h3>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">Bulk document processing services for families and groups looking to handle multiple applications together.</p>
+                     <ul class="space-y-3 mb-10 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-500"></i><span>Family Discount Rates</span></li>
+                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-500"></i><span>Group Status Tracking</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PROCESS VISUALIZATION -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-heading font-medium text-slate-900 dark:text-white mb-16">Application Submission Roadmap</h2>
+            <div class="grid md:grid-cols-4 gap-4 relative">
+                 <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 border-t-2 border-dashed border-slate-200 dark:border-slate-800 -z-0"></div>
+                 <div class="relative z-10 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm">
+                    <div class="text-xs font-medium text-primary mb-2">STEP 1</div>
+                    <h4 class="font-medium dark:text-white">Document Audit</h4>
+                    <p class="text-slate-500 text-xs mt-2">Every required paper is verified.</p>
+                 </div>
+                 <div class="relative z-10 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm">
+                    <div class="text-xs font-medium text-primary mb-2">STEP 2</div>
+                    <h4 class="font-medium dark:text-white">Form Preparation</h4>
+                    <p class="text-slate-500 text-xs mt-2">Your government applications are accurately filled.</p>
+                 </div>
+                 <div class="relative z-10 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm">
+                    <div class="text-xs font-medium text-primary mb-2">STEP 3</div>
+                    <h4 class="font-medium dark:text-white">Submission</h4>
+                    <p class="text-slate-500 text-xs mt-2">Fast-tracked submission and slot booking.</p>
+                 </div>
+                 <div class="relative z-10 bg-primary p-6 rounded-2xl shadow-sm text-white">
+                    <div class="text-xs font-medium text-blue-200 mb-2">STEP 4</div>
+                    <h4 class="font-medium">Total Processing</h4>
+                    <p class="text-white/70 text-xs mt-2">Track progress until delivery at your door.</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3.5: THE PROCESSING VELOCITY ENGINE (UNIQUE DESIGN 1) -->
+    <section class="py-32 bg-white dark:bg-slate-950 transition-colors overflow-hidden relative">
+        <!-- Technical Grid Background -->
+        <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none">
+             <div class="absolute inset-0 bg-[linear-gradient(to_right,#1E3A8A1A_1px,transparent_1px),linear-gradient(to_bottom,#1E3A8A1A_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-24">
+                <div class="lg:w-1/2 animate-on-scroll text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 text-primary dark:text-blue-400 font-medium uppercase tracking-[0.3em] text-[10px] mb-8 py-2 px-4 bg-slate-100 dark:bg-white/5 rounded-lg border border-slate-200 dark:border-white/10 mx-auto lg:mx-0">
+                         <span>Advanced Tracking</span>
+                    </div>
+                    <h2 class="text-4xl md:text-7xl font-heading font-medium text-slate-900 dark:text-white leading-tight mb-8">
+                        The Velocity <br class="hidden lg:inline"/><span class="text-primary font-outline dark:font-outline">Engine.</span>
+                    </h2>
+                    <p class="text-xl text-slate-500 dark:text-slate-400 leading-relaxed mb-12 max-w-2xl mx-auto lg:mx-0">
+                        We don't just 'list' your documents. Our core algorithm processes thousands of application scenarios in real-time to find the exact sequence that eliminates delays before they happen.
+                    </p>
+                    <div class="space-y-4 max-w-lg mx-auto lg:mx-0">
+                        <div class="p-6 bg-slate-50 dark:bg-white/5 backdrop-blur-xl border border-slate-100 dark:border-white/10 rounded-3xl group hover:border-primary transition-all text-center lg:text-left">
+                             <img src="assets/images/IG16.png" class="w-12 h-12 rounded-xl mb-4 grayscale pointer-events-none mx-auto lg:mx-0">
+                             <h4 class="text-slate-900 dark:text-white font-medium mb-2 uppercase tracking-widest text-xs">Dynamic Status Scanning</h4>
+                             <p class="text-slate-500 text-sm">Identifying processing delays before they impact your timeline.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative animate-on-scroll" style="animation-delay: 0.3s">
+                    <div class="relative w-full h-[500px] sm:h-[600px] rounded-[3.5rem] overflow-hidden group shadow-2xl dark:shadow-[0_0_80px_rgba(30,58,138,0.3)]">
+                        <!-- Real Image replacement for icons -->
+                        <img src="assets/images/IG16.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-950 via-transparent to-primary/10"></div>
+                        
+                        <!-- Floating Scanner Animation Overlay -->
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary dark:via-blue-400 to-transparent animate-scan-y opacity-50"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3.7: THE RELIABLE DOCUMENT SHIELD (UNIQUE DESIGN 2) -->
+    <section class="py-32 bg-white dark:bg-slate-900 transition-colors overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-20">
+                <div class="lg:w-1/2 animate-on-scroll text-center lg:text-left">
+                    <h2 class="text-4xl md:text-6xl font-heading font-medium text-slate-900 dark:text-white leading-tight mb-8">
+                        The Rejection <br class="hidden lg:inline"/><span class="text-primary dark:text-blue-400">Firewall.</span>
+                    </h2>
+                    <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+                        Automation is the shield, but expertise is the sword. We integrate rigorous quality checks into every application, ensuring you never face rejections due to minor clerical errors.
+                    </p>
+                    
+                    <div class="flex gap-4 justify-center lg:justify-start">
+                         <!-- Real Image cards instead of icons - FIXED FRAMING - ALWAYS COLOR -->
+                         <div class="w-32 h-32 rounded-3xl overflow-hidden border-2 border-slate-100 dark:border-slate-800 hover:-translate-y-2 transition-all">
+                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&h=400&auto=format&fit=crop&crop=faces" class="w-full h-full object-cover transition-all">
+                         </div>
+                         <div class="w-32 h-32 rounded-3xl overflow-hidden border-2 border-slate-100 dark:border-slate-800 hover:-translate-y-2 transition-all" style="animation-delay: 0.2s">
+                             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&h=400&auto=format&fit=crop&crop=faces" class="w-full h-full object-cover transition-all">
+                         </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative animate-on-scroll" style="animation-delay: 0.3s">
+                     <div class="relative w-full h-[450px] sm:h-[550px] bg-slate-100 dark:bg-slate-800 rounded-[4rem] group overflow-hidden">
+                          <img src="assets/images/IG17.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                          
+                          <!-- Glassmorphic Overlay Card -->
+                          <div class="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10 p-6 sm:p-8 bg-white/20 backdrop-blur-2xl border border-white/20 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl animate-float text-center lg:text-left">
+                               <p class="text-white font-medium text-lg sm:text-xl mb-2">Peace of Mind Protocol</p>
+                               <p class="text-[10px] uppercase font-medium text-blue-100 tracking-[0.3em]">Verified Application Protection</p>
+                          </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FAQ / CTA -->
+    <section class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-secondary dark:bg-slate-800 p-12 rounded-[40px] flex flex-col md:flex-row items-center justify-between">
+                <div>
+                   <h2 class="text-3xl font-heading font-medium text-slate-900 dark:text-white mb-4">Unsure where to start?</h2>
+                   <p class="text-slate-500 max-w-sm">Check our requirements checklist to see what documents you need to get started.</p>
+                </div>
+                <a href="bookappointment.html" class="cta-button bg-primary text-white mt-8 md:mt-0 h-14 px-10">Start Diagnostic</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Standard) -->
+    <footer class="bg-white dark:bg-slate-900 py-12 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-12 gap-x-8 mb-12 text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start col-span-1 md:col-span-2 lg:col-span-2">
+                    <a href="index.html" class="flex items-center space-x-2.5 mb-6 group">
+                        <i class="fas fa-file-signature text-2xl text-primary dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xl font-heading font-bold text-primary dark:text-blue-400">DocAssist</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-xs mb-6 text-sm">Empowering families to reclaim their time through efficient, stress-free government document processing.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" aria-label="X (Twitter)"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Quick Menu</h6>
+                    <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-primary border-b-2 border-primary pb-1">All Services</a></li>
+                        <li><a href="document-requirements.html" class="hover:text-primary transition-colors">Requirements</a></li>
+                        <li><a href="track-status.html" class="hover:text-primary transition-colors">Track Status</a></li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Solutions & Support</h6>
+                    <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Service Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                        <li><a href="bookappointment.html" class="hover:text-primary transition-colors">Book Appointment</a></li>
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Client Portal Login</a></li>
+                        <li><a href="coming-soon.html" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start col-span-1 md:col-span-2 lg:col-span-1">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-4 uppercase tracking-widest text-xs">Newsletter</h6>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Subscribe for real-time policy updates, fee changes & processing guides.</p>
+                    <form class="w-full space-y-2.5" onsubmit="event.preventDefault(); alert('Thank you for subscribing to DocAssist updates!');">
+                        <div class="relative w-full">
+                            <input type="email" placeholder="Your email address..." required class="w-full h-10 pl-3.5 pr-10 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-400 transition-all">
+                            <button type="submit" class="absolute right-1 top-1 bottom-1 px-3 bg-primary dark:bg-blue-400 text-white dark:text-slate-900 rounded-lg text-xs font-medium hover:opacity-90 transition-opacity" title="Subscribe">
+                                <i class="fas fa-paper-plane text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-[11px] text-slate-400 dark:text-slate-500 flex items-center justify-center md:justify-start">
+                            <i class="fas fa-shield-halved text-emerald-500 mr-1"></i>No spam. Unsubscribe anytime.
+                        </p>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-slate-100 dark:border-slate-800 flex flex-col items-center text-sm text-slate-400 text-center">
+                <p>&copy; 2026 DocAssist Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

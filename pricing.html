@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Service Fees | DocAssist - Pricing</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#1E3A8A',secondary:'#F1F5F9'},fontFamily:{sans:['Inter','sans-serif'],heading:['Poppins','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="bg-white text-slate-900 transition-all duration-300 has-fixed-header">
+
+    <header class="bg-white dark:bg-slate-900 shadow-sm site-header transition-colors duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="index.html" class="flex items-center space-x-2.5 group">
+                    <i class="fas fa-file-signature text-2xl text-primary dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-xl font-heading font-bold text-primary dark:text-blue-400">DocAssist</span>
+                </a>
+            </div>
+
+            <!-- Main Nav -->
+            <div class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <div class="relative group">
+                    <button class="flex items-center space-x-1 hover:text-primary transition-colors pb-1">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="index.html" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary">Home 1</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+                <a href="document-requirements.html" class="hover:text-primary transition-colors">Requirements</a>
+                <a href="track-status.html" class="hover:text-primary transition-colors">Track Status</a>
+                <a href="pricing.html" class="text-primary border-b-2 border-primary pb-1">Pricing</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="!hidden xl:!inline-flex p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 focus:outline-none">
+                    <i class="fas fa-moon w-6 h-6 flex items-center justify-center"></i>
+                </button>
+                <button id="rtl-toggle" class="!hidden xl:!inline-flex p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 focus:outline-none">
+                    <i class="fas fa-right-left w-6 h-6 flex items-center justify-center"></i>
+                </button>
+                <a href="bookappointment.html" class="!hidden xl:!inline-flex cta-button border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900 !h-10 text-sm">Book Appointment</a>
+                <a href="login.html" class="!hidden xl:!inline-flex cta-button bg-primary text-white hover:bg-blue-800 dark:bg-blue-400 dark:text-slate-900 dark:hover:bg-blue-300 !h-10 text-sm">Login</a>
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-btn" class="xl:hidden w-11 h-11 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg cursor-pointer transition-colors focus:outline-none" aria-label="Open Mobile Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Backdrop -->
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[45] hidden opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="xl:hidden fixed top-0 right-0 h-full w-80 bg-white dark:bg-slate-900 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+            <div class="px-6 py-6 h-full flex flex-col">
+                <!-- Drawer Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-xl font-heading font-medium text-slate-900 dark:text-white">Menu</span>
+                    <button type="button" id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-white rounded-lg focus:outline-none cursor-pointer transition-colors" aria-label="Close Menu">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="space-y-4 flex-grow">
+                    <details class="group py-2">
+                        <summary class="flex items-center justify-between w-full text-primary font-medium text-lg hover:text-primary transition-colors cursor-pointer list-none" style="list-style: none;">
+                            <span>Home</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="pl-4 mt-2 space-y-2">
+                            <a href="index.html" class="block py-2 text-primary font-medium transition-colors">Home 1</a>
+                            <a href="home-2.html" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Home 2</a>
+                        </div>
+                    </details>
+                    <a href="about.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">About</a>
+                    <a href="services.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Services</a>
+                    <a href="document-requirements.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Requirements</a>
+                    <a href="track-status.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Track Status</a>
+                    <a href="pricing.html" class="block py-2 text-primary font-medium text-lg">Pricing</a>
+                    <a href="contact.html" class="block py-2 text-slate-600 dark:text-slate-300 text-lg hover:text-primary transition-colors">Contact</a>
+                    
+                    <!-- Mobile Actions (Continuous) -->
+                    <div class="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800">
+                        <div class="flex items-center space-x-6 mb-8">
+
+                            <button id="dark-mode-toggle" class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400">
+                                <i class="fas fa-moon text-xl"></i>
+                            </button>
+                            <button id="rtl-toggle" class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400">
+                                <i class="fas fa-right-left text-xl"></i>
+                            </button>
+                        </div>
+                        <a href="bookappointment.html" class="cta-button border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900 text-center py-3 rounded-lg font-medium block mb-4">Book Appointment</a>
+                        <a href="login.html" class="cta-button bg-primary text-white hover:bg-blue-800 dark:bg-blue-400 dark:text-slate-900 dark:hover:bg-blue-300 text-center py-3 rounded-lg font-medium block">Login</a>
+                    </div>
+                </div>
+                
+                <!-- Bottom Spacer for drawer height -->
+                <div class="mt-auto pb-4"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: PRICING HERO -->
+    <section class="py-24 bg-primary text-white relative hero-section flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <div class="absolute w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-3xl mx-auto px-4">
+            <nav class="flex justify-center mb-6 space-x-2 text-blue-200 text-sm font-medium uppercase tracking-widest">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-white">Pricing</span>
+            </nav>
+            <h1 class="text-4xl md:text-6xl font-heading font-medium mb-6">Transparent Service Fees</h1>
+            <p class="text-blue-100 text-lg leading-relaxed">Clear, predictable pricing with no hidden fees or extra surcharges. Simple, transparent document support.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PRICING TABLE -->
+    <section class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tier 1 -->
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all">
+                    <h3 class="text-xl font-medium dark:text-white mb-2">Standard Processing</h3>
+                    <p class="text-slate-500 text-sm mb-6">Basic document assistance.</p>
+                    <div class="text-4xl font-medium dark:text-white mb-6">$49<span class="text-sm font-medium text-slate-400">/one-time</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-500 text-sm leading-relaxed">
+                        <li class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>Document Verification</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>Form Filling Assistance</span></li>
+                        <li class="flex items-center space-x-3 text-slate-300 dark:text-slate-600 line-through"><i class="fas fa-times"></i><span>Priority Slot Booking</span></li>
+                    </ul>
+                    <a href="signup.html" class="cta-button border-2 border-primary text-primary w-full h-12">Get Started</a>
+                </div>
+                <!-- Tier 2 -->
+                <div class="bg-primary text-white p-8 rounded-3xl shadow-2xl relative transform lg:scale-105 z-10 my-8 lg:my-0">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-[10px] font-medium px-4 py-1 rounded-full uppercase">Most Popular</div>
+                    <h3 class="text-xl font-medium mb-2">Premium Assistance</h3>
+                    <p class="text-blue-100/70 text-sm mb-6">Fast-tracked processing support.</p>
+                    <div class="text-4xl font-medium mb-6">$99<span class="text-sm font-medium text-blue-200">/one-time</span></div>
+                    <ul class="space-y-4 mb-10 text-blue-50 text-sm">
+                        <li class="flex items-center space-x-3"><i class="fas fa-check text-blue-300"></i><span>Dedicated Application Agent</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-check text-blue-300"></i><span>Priority Slot Booking</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-check text-blue-300"></i><span>Real-time Status Updates</span></li>
+                    </ul>
+                    <a href="signup.html" class="cta-button bg-white text-primary w-full h-12">Apply Now</a>
+                </div>
+                <!-- Tier 3 -->
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto lg:col-span-1 lg:w-full lg:mx-0">
+                    <h3 class="text-xl font-medium dark:text-white mb-2">Family Package</h3>
+                    <p class="text-slate-500 text-sm mb-6">Bulk processing for up to 4 members.</p>
+                    <div class="text-4xl font-medium dark:text-white mb-6">$299<span class="text-sm font-medium text-slate-400">/one-time</span></div>
+                     <ul class="space-y-4 mb-10 text-slate-500 text-sm leading-relaxed">
+                        <li class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>Dedicated Family Agent</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>Synchronized Slot Booking</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>Home Document Pickup (Select Cities)</span></li>
+                    </ul>
+                    <a href="signup.html" class="cta-button border-2 border-primary text-primary w-full h-12">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2.1: THE SAVINGS VISUALIZER (UNIQUE DESIGN 3) -->
+    <section class="py-32 bg-slate-900 overflow-hidden relative">
+        <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_30%_20%,rgba(30,58,138,0.2),transparent)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <!-- Data Visual Side -->
+                <div class="lg:w-1/2">
+                    <div class="glass-calculator p-12 rounded-[3.5rem] border border-white/5 animate-on-scroll">
+                        <span class="text-[10px] font-medium uppercase tracking-[0.4em] text-blue-400 mb-8 block">Time Efficiency</span>
+                        <h2 class="text-3xl md:text-5xl font-heading font-medium text-white leading-tight mb-12">Witness Your <br/><span class="text-primary text-blue-400">Time Saved</span></h2>
+                        
+                        <div class="flex flex-col md:flex-row items-center gap-12">
+                             <div class="relative w-40 h-40">
+                                 <svg class="w-full h-full transform -rotate-90">
+                                     <circle cx="80" cy="80" r="70" stroke="currentColor" stroke-width="12" fill="transparent" class="text-white/5" />
+                                     <circle cx="80" cy="80" r="70" stroke="currentColor" stroke-width="12" fill="transparent" class="text-blue-500 circle-progress-bar animate-on-scroll" style="--target: 60;" />
+                                 </svg>
+                                 <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                     <span class="text-3xl font-medium text-white">120 hrs</span>
+                                     <span class="text-[8px] font-medium text-slate-400 uppercase">Avg Saved / Application</span>
+                                 </div>
+                             </div>
+                             <div class="space-y-4">
+                                 <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
+                                     <span class="text-[10px] font-medium text-slate-400 uppercase">Wait Times</span>
+                                     <p class="text-lg font-medium text-white">-80% Queue Time</p>
+                                 </div>
+                                 <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
+                                     <span class="text-[10px] font-medium text-slate-400 uppercase">Error Reduction</span>
+                                     <p class="text-lg font-medium text-white">99.9% Approval Rate</p>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descriptive Photo Side -->
+                <div class="lg:w-1/2 relative">
+                    <div class="relative rounded-[4rem] overflow-hidden group shadow-2xl animate-on-scroll">
+                        <img src="assets/images/IG18.png" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Document Projections">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-slate-950 via-transparent to-primary/20"></div>
+                        
+                        <div class="absolute bottom-10 left-10 p-6 bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl animate-float">
+                             <p class="text-white font-medium leading-tight">Elite processing for every <br/>single application.</p>
+                             <div class="mt-4 flex -space-x-2">
+                                 <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100">
+                                 <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100">
+                                 <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100">
+                                 <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-primary flex items-center justify-center text-[10px] font-medium text-white">+4k</div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2.2: THE ROI MASTERY ROADMAP (UNIQUE DESIGN 4) -->
+    <section class="py-32 bg-white dark:bg-slate-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-24 animate-on-scroll">
+                <span class="text-primary dark:text-blue-400 font-medium uppercase tracking-[0.4em] text-xs mb-4 block">Our Guarantee</span>
+                <h2 class="text-4xl md:text-7xl font-heading font-medium text-slate-900 dark:text-white leading-[0.8] tracking-tighter">THE VALUE OF <br/><span class="text-primary dark:text-blue-400">OUR SERVICE.</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <!-- Step 1 -->
+                 <div class="bg-secondary dark:bg-slate-900 p-12 rounded-[3.5rem] relative group border border-transparent hover:border-primary/20 transition-all stagger-reveal animate-on-scroll reveal-delay-1">
+                     <div class="text-7xl font-medium text-primary/10 dark:text-white/5 absolute top-8 left-8 transition-colors group-hover:text-primary/20">01</div>
+                     <div class="relative z-10 pt-16">
+                         <h3 class="text-2xl font-medium dark:text-white mb-4">Immediate Stress <br/>Removal</h3>
+                         <p class="text-slate-500 text-sm leading-relaxed">Our agents eliminate the hours of confusing research and manual data entry on Day 1.</p>
+                     </div>
+                 </div>
+
+                 <!-- Step 2 (Highlighted) -->
+                 <div class="bg-primary p-12 rounded-[3.5rem] relative group shadow-2xl scale-105 z-10 stagger-reveal animate-on-scroll reveal-delay-2">
+                     <div class="text-7xl font-medium text-white/10 absolute top-8 left-8">02</div>
+                     <div class="relative z-10 pt-16">
+                         <h3 class="text-2xl font-medium text-white mb-4 tracking-tight">Guaranteed <br/>Accuracy</h3>
+                         <p class="text-blue-100 text-sm leading-relaxed">Our rigorous multi-step checks ensure your documents are accepted by authorities the first time.</p>
+                     </div>
+                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-[10px] font-medium px-4 py-1 rounded-full uppercase border border-white/20">Crucial Milestone</div>
+                 </div>
+
+                 <!-- Step 3 -->
+                  <div class="bg-secondary dark:bg-slate-900 p-12 rounded-[3.5rem] relative group border border-transparent hover:border-primary/20 transition-all stagger-reveal animate-on-scroll reveal-delay-3 md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto lg:col-span-1 lg:w-full lg:mx-0">
+                     <div class="text-7xl font-medium text-primary/10 dark:text-white/5 absolute top-8 left-8 transition-colors group-hover:text-primary/20">03</div>
+                     <div class="relative z-10 pt-16">
+                         <h3 class="text-2xl font-medium dark:text-white mb-4">Lifetime <br/>Support</h3>
+                         <p class="text-slate-500 text-sm leading-relaxed">We maintain your digital vault to instantly process renewals or future applications with zero friction.</p>
+                     </div>
+                 </div>
+            </div>
+            
+            
+            
+        </div>
+    </section>
+
+    <!-- SECTION 3: PREMIUM ADVANCED FAQ HUB & KNOWLEDGE BASE -->
+    <section id="processing-questions" class="py-28 bg-slate-50 dark:bg-slate-950 transition-colors relative overflow-hidden">
+        <!-- Background Lighting & Accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-blue-600/10 via-indigo-500/10 to-transparent blur-3xl rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header Badge & Title -->
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <div class="inline-flex items-center space-x-2.5 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary dark:text-blue-400 text-xs font-semibold uppercase tracking-widest border border-blue-200/50 dark:border-blue-800/40 mb-6 shadow-sm">
+                    <i class="fas fa-circle-question text-blue-500 text-sm"></i>
+                    <span>Clear Answers, Zero Ambiguity</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white leading-tight tracking-tight mb-6">
+                    Processing <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 dark:from-blue-400 dark:via-indigo-300 dark:to-sky-300">Questions</span> & Guidance
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed">
+                    Everything you need to know about processing timelines, fee transparency, privacy compliance, and our 100% money-back guarantee.
+                </p>
+            </div>
+
+            <!-- Search Bar & Filter Controls Hub -->
+            <div class="max-w-4xl mx-auto mb-12 space-y-6">
+                <!-- Search Input Bar -->
+                <div class="relative group">
+                    <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary dark:group-focus-within:text-blue-400 transition-colors">
+                        <i class="fas fa-search text-lg"></i>
+                    </div>
+                    <input type="text" id="faq-search-input" placeholder="Search questions (e.g., refund, timeline, hidden charges)..." class="w-full pl-14 pr-12 py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 shadow-lg shadow-slate-200/50 dark:shadow-none focus:outline-none focus:ring-2 focus:ring-primary/40 dark:focus:ring-blue-500/40 focus:border-transparent transition-all duration-300 text-sm md:text-base">
+                    <button id="faq-search-clear" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" title="Clear search">
+                        <i class="fas fa-times-circle text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Category Filter Pills -->
+                <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3" id="faq-category-filters">
+                    <button data-category="all" class="faq-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 bg-primary text-white shadow-md shadow-primary/20 dark:bg-blue-500 dark:text-slate-950">
+                        <i class="fas fa-layer-group mr-1.5"></i>All Questions
+                    </button>
+                    <button data-category="general" class="faq-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-blue-400 hover:text-primary dark:hover:text-blue-400">
+                        <i class="fas fa-building-columns mr-1.5"></i>General & Legality
+                    </button>
+                    <button data-category="pricing" class="faq-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-blue-400 hover:text-primary dark:hover:text-blue-400">
+                        <i class="fas fa-wallet mr-1.5"></i>Pricing & Fees
+                    </button>
+                    <button data-category="timelines" class="faq-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-blue-400 hover:text-primary dark:hover:text-blue-400">
+                        <i class="fas fa-clock mr-1.5"></i>Timelines & Delivery
+                    </button>
+                    <button data-category="security" class="faq-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-blue-400 hover:text-primary dark:hover:text-blue-400">
+                        <i class="fas fa-shield-halved mr-1.5"></i>Security & Refund
+                    </button>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion Cards Grid -->
+            <div id="faq-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                
+                <!-- Item 1 (General) -->
+                <details class="faq-item group bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-all duration-300 hover:border-primary/40 dark:hover:border-blue-500/40 hover:shadow-xl open:shadow-2xl open:border-primary/50 dark:open:border-blue-400/50" data-category="general">
+                    <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none appearance-none outline-none select-none">
+                        <div class="flex items-center space-x-4 pr-4">
+                            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-open:bg-primary group-open:text-white dark:group-open:bg-blue-500 dark:group-open:text-slate-950 transition-colors">
+                                <i class="fas fa-building-columns text-base"></i>
+                            </div>
+                            <h4 class="text-base md:text-lg font-semibold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-blue-400 mb-0">Is DocAssist an official government agency?</h4>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary dark:group-open:text-blue-400 transition-all duration-300">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-1">
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            No. DocAssist is an independent document management consultancy. We streamline complex government administrative procedures, perform pre-verification, manage appointment slots, and expedite file preparation. Official government fees are paid directly to issuing agencies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-check-circle text-emerald-500 mr-1.5"></i>Independent Consultancy
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-shield-check text-blue-500 mr-1.5"></i>Pre-Validation Guaranteed
+                            </span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Item 2 (Pricing) -->
+                <details class="faq-item group bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-all duration-300 hover:border-primary/40 dark:hover:border-blue-500/40 hover:shadow-xl open:shadow-2xl open:border-primary/50 dark:open:border-blue-400/50" data-category="pricing">
+                    <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none appearance-none outline-none select-none">
+                        <div class="flex items-center space-x-4 pr-4">
+                            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-open:bg-primary group-open:text-white dark:group-open:bg-blue-500 dark:group-open:text-slate-950 transition-colors">
+                                <i class="fas fa-wallet text-base"></i>
+                            </div>
+                            <h4 class="text-base md:text-lg font-semibold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-blue-400 mb-0">Are there any hidden charges or extra fees?</h4>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary dark:group-open:text-blue-400 transition-all duration-300">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-1">
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            Never. Our service fee packages are 100% transparent and all-inclusive of our guidance, document review, and tracking portal access. Any required official government fees are itemized clearly upfront before you authorize payment.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-200/50 dark:border-emerald-800/40">
+                                <i class="fas fa-tag mr-1.5"></i>Zero Hidden Charges
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-receipt text-blue-500 mr-1.5"></i>Itemized Invoices
+                            </span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Item 3 (Security) -->
+                <details class="faq-item group bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-all duration-300 hover:border-primary/40 dark:hover:border-blue-500/40 hover:shadow-xl open:shadow-2xl open:border-primary/50 dark:open:border-blue-400/50" data-category="security">
+                    <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none appearance-none outline-none select-none">
+                        <div class="flex items-center space-x-4 pr-4">
+                            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-open:bg-primary group-open:text-white dark:group-open:bg-blue-500 dark:group-open:text-slate-950 transition-colors">
+                                <i class="fas fa-rotate-left text-base"></i>
+                            </div>
+                            <h4 class="text-base md:text-lg font-semibold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-blue-400 mb-0">What is your 100% Money-Back Guarantee policy?</h4>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary dark:group-open:text-blue-400 transition-all duration-300">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-1">
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            If our senior specialists review your application during pre-validation and determine that you do not meet government eligibility requirements before official submission, we will immediately issue a 100% full refund of our service fee.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200/50 dark:border-blue-800/40">
+                                <i class="fas fa-shield-heart mr-1.5"></i>100% Full Refundable
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-handshake text-emerald-500 mr-1.5"></i>Zero-Risk Guarantee
+                            </span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Item 4 (Timelines) -->
+                <details class="faq-item group bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-all duration-300 hover:border-primary/40 dark:hover:border-blue-500/40 hover:shadow-xl open:shadow-2xl open:border-primary/50 dark:open:border-blue-400/50" data-category="timelines">
+                    <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none appearance-none outline-none select-none">
+                        <div class="flex items-center space-x-4 pr-4">
+                            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-open:bg-primary group-open:text-white dark:group-open:bg-blue-500 dark:group-open:text-slate-950 transition-colors">
+                                <i class="fas fa-clock text-base"></i>
+                            </div>
+                            <h4 class="text-base md:text-lg font-semibold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-blue-400 mb-0">How long does expedited processing take?</h4>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary dark:group-open:text-blue-400 transition-all duration-300">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-1">
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            While official government processing timelines depend on statutory department workloads, our automated file formatting and instant slot booking reduce overall processing wait times by up to 80%, placing your file in the fastest queue.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 border border-amber-200/50 dark:border-amber-800/40">
+                                <i class="fas fa-bolt mr-1.5"></i>Up to 80% Faster Queue
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-calendar-check text-blue-500 mr-1.5"></i>Synchronized Slot Booking
+                            </span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Item 5 (Security) -->
+                <details class="faq-item group bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-all duration-300 hover:border-primary/40 dark:hover:border-blue-500/40 hover:shadow-xl open:shadow-2xl open:border-primary/50 dark:open:border-blue-400/50" data-category="security">
+                    <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none appearance-none outline-none select-none">
+                        <div class="flex items-center space-x-4 pr-4">
+                            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-open:bg-primary group-open:text-white dark:group-open:bg-blue-500 dark:group-open:text-slate-950 transition-colors">
+                                <i class="fas fa-lock text-base"></i>
+                            </div>
+                            <h4 class="text-base md:text-lg font-semibold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-blue-400 mb-0">How is my sensitive personal document data secured?</h4>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary dark:group-open:text-blue-400 transition-all duration-300">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-1">
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            All documents uploaded to our platform are protected by bank-level AES 256-bit encryption during upload and storage. Files are kept strictly in your private encrypted vault and automatically purged after official processing is complete.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-key text-emerald-500 mr-1.5"></i>AES 256-Bit Encryption
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-user-shield text-blue-500 mr-1.5"></i>Strict Privacy Compliance
+                            </span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Item 6 (Pricing) -->
+                <details class="faq-item group bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-all duration-300 hover:border-primary/40 dark:hover:border-blue-500/40 hover:shadow-xl open:shadow-2xl open:border-primary/50 dark:open:border-blue-400/50" data-category="pricing">
+                    <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none appearance-none outline-none select-none">
+                        <div class="flex items-center space-x-4 pr-4">
+                            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-open:bg-primary group-open:text-white dark:group-open:bg-blue-500 dark:group-open:text-slate-950 transition-colors">
+                                <i class="fas fa-users text-base"></i>
+                            </div>
+                            <h4 class="text-base md:text-lg font-semibold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-blue-400 mb-0">Can I switch plans or add family members later?</h4>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary dark:group-open:text-blue-400 transition-all duration-300">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-1">
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            Yes! You can easily upgrade from Individual to Priority Concierge or Family Package at any stage prior to final submission. The price difference is prorated without any penalty or administrative fees.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-sliders text-blue-500 mr-1.5"></i>Flexible Plan Switching
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-percent text-emerald-500 mr-1.5"></i>Prorated Difference
+                            </span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Item 7 (General) -->
+                <details class="faq-item group bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-all duration-300 hover:border-primary/40 dark:hover:border-blue-500/40 hover:shadow-xl open:shadow-2xl open:border-primary/50 dark:open:border-blue-400/50" data-category="general">
+                    <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none appearance-none outline-none select-none">
+                        <div class="flex items-center space-x-4 pr-4">
+                            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-open:bg-primary group-open:text-white dark:group-open:bg-blue-500 dark:group-open:text-slate-950 transition-colors">
+                                <i class="fas fa-headset text-base"></i>
+                            </div>
+                            <h4 class="text-base md:text-lg font-semibold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-blue-400 mb-0">What if government authorities ask for revisions?</h4>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary dark:group-open:text-blue-400 transition-all duration-300">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-1">
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            Your dedicated agent will handle all administrative correspondence. In the rare event that an issuing authority requests updated photos, revised notarization, or additional evidence, we guide you step-by-step and resubmit your application without charging extra service fees.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-rotate text-purple-500 mr-1.5"></i>Free Application Resubmission
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-user-gear text-blue-500 mr-1.5"></i>Dedicated Agent Support
+                            </span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Item 8 (Timelines) -->
+                <details class="faq-item group bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-all duration-300 hover:border-primary/40 dark:hover:border-blue-500/40 hover:shadow-xl open:shadow-2xl open:border-primary/50 dark:open:border-blue-400/50" data-category="timelines">
+                    <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none appearance-none outline-none select-none">
+                        <div class="flex items-center space-x-4 pr-4">
+                            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 flex items-center justify-center flex-shrink-0 group-open:bg-primary group-open:text-white dark:group-open:bg-blue-500 dark:group-open:text-slate-950 transition-colors">
+                                <i class="fas fa-truck-fast text-base"></i>
+                            </div>
+                            <h4 class="text-base md:text-lg font-semibold text-slate-900 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-blue-400 mb-0">Do you offer doorstep document pickup & delivery?</h4>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center flex-shrink-0 group-open:rotate-180 group-open:bg-primary/10 group-open:text-primary dark:group-open:text-blue-400 transition-all duration-300">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-1">
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            Yes! Doorstep document pickup and physical dispatch delivery are included in our Priority Concierge and Family Packages across top metropolitan areas. For standard packages, secure courier tracking and digital submission links are provided.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-house-user text-blue-500 mr-1.5"></i>Home Pickup (Select Cities)
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-box text-amber-500 mr-1.5"></i>Tracked Dispatch
+                            </span>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- Empty Search Fallback State -->
+            <div id="faq-empty-state" class="hidden text-center py-16 px-4 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 shadow-sm max-w-xl mx-auto mt-6">
+                <div class="w-16 h-16 bg-blue-50 dark:bg-blue-900/40 text-primary dark:text-blue-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fas fa-magnifying-glass"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">No matching questions found</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">We couldn't find any questions matching your query. Try searching with different keywords or browse by category.</p>
+                <button id="faq-reset-btn" class="px-6 py-2.5 bg-primary text-white rounded-full text-xs font-semibold hover:bg-blue-800 transition-colors inline-flex items-center space-x-2">
+                    <i class="fas fa-rotate-left"></i>
+                    <span>Show All Questions</span>
+                </button>
+            </div>
+
+            <!-- Interactive Premium Help & Support Card Banner -->
+            <div class="mt-20 bg-gradient-to-br from-slate-900 via-primary to-slate-950 rounded-[2.5rem] p-8 md:p-14 text-white shadow-2xl relative overflow-hidden border border-white/10">
+                <!-- Decorative Elements -->
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/20 blur-3xl rounded-full pointer-events-none"></div>
+                <div class="absolute right-12 top-8 opacity-10 hidden lg:block">
+                    <i class="fas fa-headset text-9xl"></i>
+                </div>
+
+                <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                    <div class="max-w-xl">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-blue-200 text-xs font-medium mb-4 border border-white/10">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Direct Advisor Support Available</span>
+                        </div>
+                        <h3 class="text-2xl md:text-4xl font-heading font-bold text-white mb-4 leading-tight">
+                            Have a specific question about your documents?
+                        </h3>
+                        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                            Our senior government process specialists are available to review your exact scenario, document checklist, and urgency levels in a free 1-on-1 consultation.
+                        </p>
+                        
+                        <div class="mt-6 flex items-center space-x-4 text-xs text-slate-300">
+                            <span class="flex items-center"><i class="fas fa-clock text-blue-400 mr-1.5"></i>Avg response: &lt; 3 mins</span>
+                            <span class="flex items-center"><i class="fas fa-star text-amber-400 mr-1.5"></i>4.9/5 Rating (4,200+ Reviews)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto flex-shrink-0">
+                        <a href="bookappointment.html" class="cta-button bg-white text-slate-900 hover:bg-blue-50 font-semibold shadow-lg text-center justify-center">
+                            <i class="fas fa-calendar-check mr-2 text-primary"></i>Book Free Consultation
+                        </a>
+                        <a href="contact.html" class="cta-button border-2 border-white/30 text-white hover:bg-white/10 font-semibold text-center justify-center">
+                            <i class="fas fa-comments mr-2"></i>Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ Search & Filter JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('faq-search-input');
+            const clearBtn = document.getElementById('faq-search-clear');
+            const filterBtns = document.querySelectorAll('.faq-filter-btn');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const emptyState = document.getElementById('faq-empty-state');
+            const resetBtn = document.getElementById('faq-reset-btn');
+
+            let activeCategory = 'all';
+
+            const filterFAQs = () => {
+                const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+                let visibleCount = 0;
+
+                if (query.length > 0) {
+                    clearBtn?.classList.remove('hidden');
+                } else {
+                    clearBtn?.classList.add('hidden');
+                }
+
+                faqItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    const text = item.textContent.toLowerCase();
+                    const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                    const matchesSearch = query === '' || text.includes(query);
+
+                    if (matchesCategory && matchesSearch) {
+                        item.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        item.classList.add('hidden');
+                        item.removeAttribute('open');
+                    }
+                });
+
+                if (visibleCount === 0) {
+                    emptyState?.classList.remove('hidden');
+                } else {
+                    emptyState?.classList.add('hidden');
+                }
+            };
+
+            // Search input listener
+            if (searchInput) {
+                searchInput.addEventListener('input', filterFAQs);
+            }
+
+            // Clear search button
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    searchInput.value = '';
+                    filterFAQs();
+                    searchInput.focus();
+                });
+            }
+
+            // Category buttons filter
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeCategory = btn.getAttribute('data-category');
+                    
+                    filterBtns.forEach(b => {
+                        b.className = 'faq-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-blue-400 hover:text-primary dark:hover:text-blue-400';
+                    });
+
+                    btn.className = 'faq-filter-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 bg-primary text-white shadow-md shadow-primary/20 dark:bg-blue-500 dark:text-slate-950';
+
+                    filterFAQs();
+                });
+            });
+
+            // Reset button
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    if (searchInput) searchInput.value = '';
+                    activeCategory = 'all';
+                    filterBtns[0]?.click();
+                });
+            }
+
+            // Accordion behavior: close others when opening one for a cleaner look
+            faqItems.forEach(item => {
+                item.addEventListener('toggle', (e) => {
+                    if (item.open) {
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item && otherItem.open) {
+                                otherItem.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    
+
+<!-- Footer (Standard) -->
+    <footer class="bg-white dark:bg-slate-900 py-12 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-12 gap-x-8 mb-12 text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start col-span-1 md:col-span-2 lg:col-span-2">
+                    <a href="index.html" class="flex items-center space-x-2.5 mb-6 group">
+                        <i class="fas fa-file-signature text-2xl text-primary dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xl font-heading font-bold text-primary dark:text-blue-400">DocAssist</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-xs mb-6 text-sm">Empowering families to reclaim their time through efficient, stress-free government document processing.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" aria-label="X (Twitter)"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Quick Menu</h6>
+                    <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">All Services</a></li>
+                        <li><a href="document-requirements.html" class="hover:text-primary transition-colors">Requirements</a></li>
+                        <li><a href="track-status.html" class="hover:text-primary transition-colors">Track Status</a></li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Solutions & Support</h6>
+                    <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="pricing.html" class="text-primary border-b-2 border-primary pb-1">Service Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                        <li><a href="bookappointment.html" class="hover:text-primary transition-colors">Book Appointment</a></li>
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Client Portal Login</a></li>
+                        <li><a href="coming-soon.html" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start col-span-1 md:col-span-2 lg:col-span-1">
+                    <h6 class="font-medium text-slate-900 dark:text-white mb-4 uppercase tracking-widest text-xs">Newsletter</h6>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Subscribe for real-time policy updates, fee changes & processing guides.</p>
+                    <form class="w-full space-y-2.5" onsubmit="event.preventDefault(); alert('Thank you for subscribing to DocAssist updates!');">
+                        <div class="relative w-full">
+                            <input type="email" placeholder="Your email address..." required class="w-full h-10 pl-3.5 pr-10 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-400 transition-all">
+                            <button type="submit" class="absolute right-1 top-1 bottom-1 px-3 bg-primary dark:bg-blue-400 text-white dark:text-slate-900 rounded-lg text-xs font-medium hover:opacity-90 transition-opacity" title="Subscribe">
+                                <i class="fas fa-paper-plane text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-[11px] text-slate-400 dark:text-slate-500 flex items-center justify-center md:justify-start">
+                            <i class="fas fa-shield-halved text-emerald-500 mr-1"></i>No spam. Unsubscribe anytime.
+                        </p>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-slate-100 dark:border-slate-800 flex flex-col items-center text-sm text-slate-400 text-center">
+                <p>&copy; 2026 DocAssist Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

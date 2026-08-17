@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login | DocAssist Assistance</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#1E3A8A',secondary:'#F1F5F9'},fontFamily:{sans:['Inter','sans-serif'],heading:['Poppins','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="bg-secondary dark:bg-slate-950 flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 transition-colors duration-300">
+
+    <div class="w-full max-w-md flex flex-col items-center my-auto py-6 sm:py-8">
+        <!-- Utility Toggles: Top Right Corner on Web View (Desktop), Above Card on Mobile -->
+        <div class="w-full md:w-auto flex items-center justify-end space-x-3 mb-4 md:mb-0 md:fixed md:top-6 md:right-6 z-50">
+            <button id="rtl-toggle" class="w-10 h-10 bg-white dark:bg-slate-900 shadow-lg rounded-full flex items-center justify-center text-slate-500 hover:text-primary transition-all">
+                <i class="fas fa-right-left"></i>
+            </button>
+            <button id="dark-mode-toggle" class="w-10 h-10 bg-white dark:bg-slate-900 shadow-lg rounded-full flex items-center justify-center text-slate-500 hover:text-primary transition-all">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <!-- Card -->
+        <div class="w-full bg-white dark:bg-slate-900/90 rounded-[40px] border border-slate-100 dark:border-slate-800 shadow-2xl dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] backdrop-blur-xl p-8 md:p-12 relative overflow-hidden transition-all animate-on-scroll">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+            
+            <!-- Logo -->
+            <div class="text-center mb-10">
+                <a href="index.html" class="flex items-center justify-center space-x-2.5 group mb-4">
+                    <i class="fas fa-file-signature text-3xl text-primary dark:text-blue-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-2xl font-heading font-bold text-primary dark:text-blue-400">DocAssist</span>
+                </a>
+                <h2 class="text-3xl font-heading font-medium text-slate-900 dark:text-white mb-2">Welcome Back.</h2>
+                <p class="text-slate-500 text-sm">Resuming your path to fast processing.</p>
+            </div>
+
+        <form class="space-y-6">
+            <div>
+                <label class="block text-xs font-medium text-slate-400 uppercase tracking-widest mb-2">Email Address</label>
+                <div class="relative"><i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-300"></i><input type="email" placeholder="john@example.com" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-none rounded-2xl pl-12 pr-6 focus:ring-2 focus:ring-primary dark:text-white transition-all outline-none"></div>
+            </div>
+            <div>
+
+                <label class="block text-xs font-medium text-slate-400 uppercase tracking-widest mb-2">Password</label>
+
+
+                <div class="relative">
+                    <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                    <input type="password" placeholder="••••••••" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-none rounded-2xl pl-12 pr-12 focus:ring-2 focus:ring-primary dark:text-white transition-all outline-none">
+                    <i class="fas fa-eye absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 cursor-pointer hover:text-primary transition-colors"></i>
+                </div>
+                <div class="mt-2 text-right">
+                    <a href="#" class="text-[10px] text-primary font-medium hover:underline uppercase tracking-wider">Forgot Password?</a>
+                </div>
+            </div>
+
+            <div class="flex items-center text-sm">
+                <label class="flex items-center space-x-2 cursor-pointer text-slate-500 hover:text-primary transition-colors">
+                    <input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary"> 
+                    <span class="text-xs font-medium">Remember me for 30 days</span>
+                </label>
+            </div>
+
+            <button type="button" onclick="window.location.href='#'" class="cta-button bg-primary text-white w-full h-14 shadow-xl hover:shadow-primary/30">Login</button>
+        </form>
+
+        <div class="mt-10 pt-10 border-t border-slate-100 dark:border-slate-800 text-center">
+            <p class="text-xs font-medium text-slate-400 uppercase tracking-widest mb-6">Or continue with</p>
+            <div class="grid grid-cols-2 gap-4">
+                <button class="h-14 border-2 border-slate-100 dark:border-slate-800 rounded-2xl flex items-center justify-center space-x-3 hover:bg-blue-50 dark:hover:bg-slate-800 hover:border-primary dark:hover:border-blue-400 hover:text-primary dark:hover:text-blue-400 transition-colors"><i class="fab fa-google"></i><span class="font-medium text-sm dark:text-white">Google</span></button>
+                <button class="h-14 border-2 border-slate-100 dark:border-slate-800 rounded-2xl flex items-center justify-center space-x-3 hover:bg-blue-50 dark:hover:bg-slate-800 hover:border-primary dark:hover:border-blue-400 hover:text-primary dark:hover:text-blue-400 transition-colors"><i class="fab fa-apple"></i><span class="font-medium text-sm dark:text-white">Apple</span></button>
+            </div>
+            <p class="mt-10 text-slate-500 text-sm">New to DocAssist? <a href="signup.html" class="text-primary font-medium hover:underline">Create Account</a></p>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

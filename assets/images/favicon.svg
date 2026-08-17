@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document Sheet without background container -->
+  <path d="M6 5C6 3.89543 6.89543 3 8 3H17L24 10V27C24 28.1046 23.1046 29 22 29H8C6.89543 29 6 28.1046 6 27V5Z" fill="#003366" fill-opacity="0.1" stroke="#003366" stroke-width="2.2" stroke-linejoin="round"/>
+  <!-- Folded Corner -->
+  <path d="M17 3V10H24" stroke="#003366" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Signature Scribble -->
+  <path d="M9 24C10.5 22.5 11.5 24.5 13 23.5" stroke="#003366" stroke-width="2" stroke-linecap="round"/>
+  <!-- Pen Icon -->
+  <path d="M23.5 14.5L16.5 21.5L13.5 22.5L14.5 19.5L21.5 12.5L23.5 14.5Z" fill="#D97706" stroke="#003366" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>
