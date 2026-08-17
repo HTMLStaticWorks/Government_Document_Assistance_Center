@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <rect width="1600" height="900" fill="#002244" />
+  <g fill="none" stroke="#00509e" stroke-width="2" opacity="0.3">
+    <!-- Abstract documents -->
+    <rect x="300" y="200" width="150" height="200" rx="10" transform="rotate(-15 375 300)" />
+    <line x1="330" y1="240" x2="420" y2="240" transform="rotate(-15 375 300)" />
+    <line x1="330" y1="270" x2="400" y2="270" transform="rotate(-15 375 300)" />
+    
+    <rect x="1100" y="400" width="180" height="240" rx="10" transform="rotate(20 1190 520)" />
+    <line x1="1130" y1="450" x2="1250" y2="450" transform="rotate(20 1190 520)" />
+    <line x1="1130" y1="490" x2="1220" y2="490" transform="rotate(20 1190 520)" />
+    
+    <rect x="700" y="550" width="200" height="260" rx="10" transform="rotate(-5 800 680)" />
+  </g>
+  <g stroke="#00a8e8" stroke-width="1" opacity="0.2">
+    <path d="M0,100 C400,200 800,-100 1600,100" />
+    <path d="M0,300 C500,400 1000,100 1600,300" />
+    <path d="M0,800 C600,700 1200,900 1600,700" />
+  </g>
+</svg>
