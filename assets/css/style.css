@@ -196,6 +196,28 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0 !important;
 }
 
+/* 10. Bento Box & Graphic Card Flipping in RTL Mode */
+[dir="rtl"] .absolute.right-\[-5\%\],
+[dir="rtl"] [class*="right-[-5%]"] {
+    right: auto !important;
+    left: -5% !important;
+}
+
+[dir="rtl"] .absolute.right-8 {
+    right: auto !important;
+    left: 2rem !important;
+}
+
+[dir="rtl"] .absolute.right-6 {
+    right: auto !important;
+    left: 1.5rem !important;
+}
+
+[dir="rtl"] .absolute.right-4 {
+    right: auto !important;
+    left: 1rem !important;
+}
+
 /* Animations */
 @keyframes calmFloat {
     0%, 100% { transform: translateY(0); }
